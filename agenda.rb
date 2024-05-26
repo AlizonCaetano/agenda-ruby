@@ -57,6 +57,20 @@ def editar_contato
     end
 end
 
+def
+   print "Qual nome deseja apagar?: "
+   nome = gets.chomp
+
+   @agenda.each do |contato|
+    if contato[:nome].downcade == nome.downcase
+        indice = @agenda.index(contato)
+        @agenda.delete_at(indice)
+        break
+    end
+
+end
+
+
 loop do
 
 puts "1. Contatos\n2. Adicionar Contato\n3. Ver Contato\n4. Editar Contato\n5. Remover Contato\n0. Sair\n"
@@ -74,6 +88,10 @@ puts "1. Contatos\n2. Adicionar Contato\n3. Ver Contato\n4. Editar Contato\n5. R
         ver_contato
     when codigo == 4
         editar_contato
+    when codigo == 5
+        excluir_contato
+    else 
+        puts "Função não existe, por favor insira uma opção válida"
     end
 
 
